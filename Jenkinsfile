@@ -32,6 +32,10 @@ pipeline{
             }
 
         stage("Deploy on prod"){
+            input{
+                message "should we continue"
+                ok "yes we should"
+            }
             steps{
                 deploy adapters: [tomcat9(credentialsId: 'tomcat-prod', path: '', url: 'http://192.168.33.11:8080')], contextPath: null, war: '**/*.war'
                 //deploy on cont-plugin
