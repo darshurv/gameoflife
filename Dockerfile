@@ -1,2 +1,2 @@
 FROM tomcat:8
-COPY target/*.war /usr/local/tomcat/webapps/
+COPY gameoflife-web/target/*.war /usr/local/tomcat/webapps/
